@@ -1,6 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
+interface dummy {
+  value: string;
+}
+
 interface DailyForecastItemProps {
   day: string;
   date: string;
@@ -16,12 +20,15 @@ const DailyForecastItem: React.FC<DailyForecastItemProps> = ({
   minTemp,
   icon,
 }) => {
+  const dummydATA: dummy = {value: 'SAURABH'};
   return (
     <View style={styles.container}>
       <View style={styles.iconWrapper}>{icon}</View>
 
       <View style={styles.middle}>
-        <Text style={styles.day}>{day}</Text>
+        <Text style={styles.day}>
+          {day} {dummydATA.value}
+        </Text>
         <Text style={styles.date}>{date}</Text>
       </View>
 
